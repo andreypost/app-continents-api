@@ -1,0 +1,43 @@
+$montserrat-font-family: 'Montserrat';
+
+$grey_color : #EAEAEA;
+
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex_center {
+  @include flex;
+  align-items: center;
+}
+
+@mixin flex_start {
+  @include flex;
+  align-items: flex-start;
+}
+
+@mixin flex_start_bet {
+  @include flex_start;
+  justify-content: space-between;
+}
+
+@mixin flex_start_end_col {
+  @include flex_start;
+  justify-content: flex-end;
+  flex-flow      : column;
+}
+
+@mixin flex_center_bet {
+  @include flex_center;
+  justify-content: space-between;
+}
+
+@mixin flex_center_center {
+  @include flex_center;
+  justify-content: center;
+}
+
+@mixin flex_center_bet_col {
+  @include flex_center_bet;
+  flex-flow: column;
+}

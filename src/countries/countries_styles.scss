@@ -1,0 +1,19 @@
+@import '../styles/variables-mixins.scss';
+
+.countries {
+
+    li {
+        margin: 10px auto;
+
+        span {
+            @include flex_start;
+            font-weight     : 500;
+            border          : 1px solid black;
+            border-radius   : 5px;
+            background-color: white;
+            padding         : 5px 10px;
+            cursor          : pointer;
+
+        }
+    }
+}
