@@ -12,8 +12,10 @@
             border-radius   : 5px;
             background-color: white;
             padding         : 5px 10px;
-            cursor          : pointer;
 
+            @media (min-width: 992px) {
+                cursor: pointer;
+            }
         }
     }
 }

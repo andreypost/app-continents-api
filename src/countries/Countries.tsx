@@ -38,8 +38,6 @@ const Countries: React.FC = () => {
   if (loading) return <Loader />
   if (error) return <p style={{ color: 'red' }}>Sorry, it is not possible to receive data now, maybe try again later.</p>
 
-  console.log(listContext)
-
   return (
     <>
       {data && data.continents.length > 0 && data.continents.map((continent: { name: string; countries: any[] }) =>

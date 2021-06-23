@@ -1,2 +1,2 @@
-.countries li{margin:10px auto}.countries li span{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;background-color:#fff;border:1px solid #000;border-radius:5px;cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;font-weight:500;padding:5px 10px}
+.countries li{margin:10px auto}.countries li span{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start;background-color:#fff;border:1px solid #000;border-radius:5px;display:-webkit-box;display:-ms-flexbox;display:flex;font-weight:500;padding:5px 10px}@media (min-width:992px){.countries li span{cursor:pointer}}
 /*# sourceMappingURL=184.css.map*/
