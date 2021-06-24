@@ -41,7 +41,7 @@ const Countries: React.FC = () => {
   return (
     <div className="countries">
       {data && data.continents.length > 0 && data.continents.map((continent: { name: string; countries: any[] }) =>
-        <ul key={continent.name} className="list">
+        <ul key={continent.name} className="tree">
           <li><span onClick={e => useCollapseList.openTree(e, '.firstList')}>{continent.name}</span>
 
             {continent.countries.map(country =>
@@ -50,7 +50,7 @@ const Countries: React.FC = () => {
 
                   {country.languages.map((language: { name: string }) =>
                     <ul key={language.name} className={listState + ' secondList'}>
-                      <li className="last"><span onClick={e => useCollapseList.closeTree(e, '.list', '.firstList, .secondList', setListState)}>{language.name}</span></li>
+                      <li><span onClick={e => useCollapseList.closeTree(e, '.tree', '.firstList, .secondList', setListState)}>{language.name}</span></li>
                     </ul>
                   )}
                 </li>
