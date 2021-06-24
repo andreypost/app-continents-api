@@ -39,18 +39,18 @@ const Countries: React.FC = () => {
   if (error) return <p style={{ color: 'red' }}>Sorry, it is not possible to receive data now, maybe try again later.</p>
 
   return (
-    <>
+    <div className="countries">
       {data && data.continents.length > 0 && data.continents.map((continent: { name: string; countries: any[] }) =>
-        <ul key={continent.name} className="countries">
-          <li className="list"><span onClick={useCollapseList.firstList}>{continent.name}</span>
+        <ul key={continent.name} className="list">
+          <li><span onClick={e => useCollapseList.openTree(e, '.firstList')}>{continent.name}</span>
 
             {continent.countries.map(country =>
-              <ul key={country.name} className={listState + ' firstList'}>
-                <li><span onClick={useCollapseList.secondList}>{country.name}</span>
+              <ul key={country.name} className={'firstList ' + listState}>
+                <li><span onClick={e => useCollapseList.openTree(e, '.secondList')}>{country.name}</span>
 
                   {country.languages.map((language: { name: string }) =>
                     <ul key={language.name} className={listState + ' secondList'}>
-                      <li><span onClick={useCollapseList.closeTree}>{language.name}</span></li>
+                      <li className="last"><span onClick={e => useCollapseList.closeTree(e, '.list', '.firstList, .secondList', setListState)}>{language.name}</span></li>
                     </ul>
                   )}
                 </li>
@@ -59,7 +59,7 @@ const Countries: React.FC = () => {
           </li>
         </ul>
       )}
-    </>
+    </div>
   )
 }
 export default Countries
