@@ -1,9 +1,59 @@
 import React, { useContext, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { useCollapseList } from './useCollapseList'
-import './countries_styles.scss'
-import Loader from '../components/Loader'
+import { useCollapseList } from '../utils/countries.helpers'
+import styled from 'styled-components'
+import Loader from './Loader'
 import { ListContext } from '..'
+
+const Div = styled.div`
+
+ul {
+  position: relative;
+}
+
+ul:before {
+  content: '';
+  height: 100%;
+  position: absolute;
+  left: 65px;
+  bottom: -10px;
+  border-left: 1px dashed black;
+  z-index: -9;
+}
+
+.firstList:before, .secondList:before {
+  height: unset;
+  width: 50%;
+  left: 27px;
+  top: 12px;
+  border-left: none;
+  border-top: 1px dashed black;
+}
+
+.secondList:before {
+  left: -12px;
+}
+
+li {
+  margin: 10px auto;
+}
+
+li span {
+  display: flex;
+  align-items: flex-start;
+  font-weight: 500;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  padding: 2px 10px;
+}
+
+@media (min-width: 992px) {
+  li span {
+    cursor: pointer;
+  }
+}
+`
 
 interface Continents {
   name: string,
@@ -39,7 +89,7 @@ const Countries: React.FC = () => {
   if (error) return <p style={{ color: 'red' }}>Sorry, it is not possible to receive data now, maybe try again later.</p>
 
   return (
-    <div className="countries">
+    <Div>
       {data && data.continents.length > 0 && data.continents.map((continent: { name: string; countries: any[] }) =>
         <ul key={continent.name} className="tree">
           <li><span onClick={e => useCollapseList.openTree(e, '.firstList')}>{continent.name}</span>
@@ -59,7 +109,7 @@ const Countries: React.FC = () => {
           </li>
         </ul>
       )}
-    </div>
+    </Div>
   )
 }
 export default Countries

@@ -5,7 +5,7 @@ import {
     Redirect
 } from 'react-router-dom'
 import { publicRoutes } from './routes'
-import { MAIN_ROUTE } from './utils/consts'
+import { MAIN_ROUTE } from './utils/routes.constants'
 import Loader from './components/Loader'
 
 const AppRouter: React.FC = (): any => {

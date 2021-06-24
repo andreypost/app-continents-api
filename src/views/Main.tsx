@@ -1,6 +1,6 @@
 import React from 'react'
-import './main_styles.scss'
-import Countries from '../countries/Countries'
+import './Main.styles.scss'
+import Countries from '../components/Countries'
 
 const Main: React.FC = () => {
   return (
