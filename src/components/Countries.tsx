@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
-import { useCollapseList } from '../utils/countries.helpers'
+import { useCollapseList } from 'utils/countries.helpers'
 import styled from 'styled-components'
-import Loader from './Loader'
+import Spiner from 'Spiner'
 import { ListContext } from '..'
 
 const Div = styled.div`
@@ -85,7 +85,7 @@ const Countries: React.FC = () => {
   const [listState, setListState] = useState(listContext)
   const { data, loading, error } = useQuery<ContinentsData>(GET_COUNTRIES)
 
-  if (loading) return <Loader />
+  if (loading) return <Spiner />
   if (error) return <p style={{ color: 'red' }}>Sorry, it is not possible to receive data now, maybe try again later.</p>
 
   return (

@@ -83,10 +83,10 @@ const Div = styled.div`
     }
   }
 `;
-const Loader: React.FC = (): any => (
+const Spiner: React.FC = (): any => (
   <Div>
     <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
   </Div>
 )
-export default Loader
+export default Spiner
 

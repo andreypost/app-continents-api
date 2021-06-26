@@ -5,12 +5,12 @@ import {
     Redirect
 } from 'react-router-dom'
 import { publicRoutes } from './routes'
-import { MAIN_ROUTE } from './utils/routes.constants'
-import Loader from './components/Loader'
+import { MAIN_ROUTE } from 'utils/routes.constants'
+import Spiner from 'Spiner'
 
 const AppRouter: React.FC = (): any => {
     return (
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Spiner />}>
             <Switch>
                 {publicRoutes.map(({ path, Component }) =>
                     <Route key={path} path={path} component={Component} exact={true} />

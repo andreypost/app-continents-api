@@ -7,6 +7,16 @@ module.exports = {
   entry: path.resolve(__dirname, '../src/index.tsx'),
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      components: path.resolve(__dirname, '../src/components'),
+      Spiner$: path.resolve(__dirname, '../src/components/Spiner.tsx'),
+      img: path.resolve(__dirname, '../src/img'),
+      svg: path.resolve(__dirname, '../src/img/svg'),
+      mixins$: path.resolve(__dirname, '../src/styles/variables-mixins.scss'),
+      utils: path.resolve(__dirname, '../src/utils'),
+      views: path.resolve(__dirname, '../src/views'),
+      // '@': path.resolve(__dirname, 'src'),
+    },
   },
   module: {
     rules: [
