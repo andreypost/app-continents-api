@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React from 'react'
 import ReactDom from 'react-dom'
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client'
 import './styles/normalize.css'
@@ -11,7 +11,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-export const ListContext = createContext('')
+
 
 //func for svg to load as sprites in index.html and use them in components -> <svg><use xlinkHref={arrow}></use></svg>
 // const importAllSvg = (webpackContext: __WebpackModuleApi.RequireContext) => {
@@ -24,9 +24,7 @@ export const ListContext = createContext('')
 // }
 
 ReactDom.render(
-  <ListContext.Provider value={'none'}>
-    <ApolloProvider client={client}>
-      <App />
-    </ApolloProvider>
-  </ListContext.Provider>
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>
   , document.getElementById('root'))

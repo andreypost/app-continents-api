@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import { useCollapseList } from 'utils/countries.helpers'
 import styled from 'styled-components'
 import Spiner from 'Spiner'
-import { ListContext } from '..'
+import { ListContext } from '../App'
 
 const Div = styled.div`
 
@@ -81,8 +81,7 @@ query continents {
 }`
 
 const Countries: React.FC = () => {
-  const listContext = useContext(ListContext)
-  const [listState, setListState] = useState(listContext)
+  const { listState, setListState } = useContext(ListContext)
   const { data, loading, error } = useQuery<ContinentsData>(GET_COUNTRIES)
 
   if (loading) return <Spiner />
