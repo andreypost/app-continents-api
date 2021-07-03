@@ -1,14 +1,10 @@
 @import 'mixins';
 
 body {
-  font-family     : $montserrat-font-family;
-  user-select     : none;
-  color           : #000000;
+  font-family: $montserrat-font-family;
+  user-select: none;
+  color: #000000;
   background-color: $grey_color;
-}
-
-.none {
-  display: none;
 }
 
 * {
@@ -16,11 +12,11 @@ body {
 }
 
 .section {
-  padding-left : 20px;
+  padding-left: 20px;
   padding-right: 20px;
-  margin-left  : auto;
-  margin-right : auto;
-  box-sizing   : border-box;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 ul,
@@ -35,12 +31,12 @@ p {
 }
 
 ul {
-  list-style-type     : none;
+  list-style-type: none;
   padding-inline-start: unset;
 }
 
 img {
-  width : 100%;
+  width: 100%;
   height: auto;
 }
 
@@ -67,26 +63,23 @@ textarea:focus {
 }
 
 ::-webkit-scrollbar {
-  width : 6px;
+  width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
   border-radius: 4px;
-  background   : #F1F1F1;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background   : #C1C1C1;
+  background: #c1c1c1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.25);
 }
-
-
-
 
 @media (min-width: 576px) {
   .section {
@@ -99,7 +92,6 @@ textarea:focus {
     max-width: 720px;
   }
 }
-
 
 @media (min-width: 992px) {
   .section {

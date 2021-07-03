@@ -11,8 +11,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-
-
 //func for svg to load as sprites in index.html and use them in components -> <svg><use xlinkHref={arrow}></use></svg>
 // const importAllSvg = (webpackContext: __WebpackModuleApi.RequireContext) => {
 //   webpackContext.keys().forEach(webpackContext)
@@ -26,5 +24,6 @@ const client = new ApolloClient({
 ReactDom.render(
   <ApolloProvider client={client}>
     <App />
-  </ApolloProvider>
-  , document.getElementById('root'))
+  </ApolloProvider>,
+  document.getElementById('root'),
+)

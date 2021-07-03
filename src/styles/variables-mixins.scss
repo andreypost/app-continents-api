@@ -1,6 +1,6 @@
 $montserrat-font-family: 'Montserrat';
 
-$grey_color : #EAEAEA;
+$grey_color: #eaeaea;
 
 @mixin flex {
   display: flex;
@@ -24,7 +24,7 @@ $grey_color : #EAEAEA;
 @mixin flex_start_end_col {
   @include flex_start;
   justify-content: flex-end;
-  flex-flow      : column;
+  flex-flow: column;
 }
 
 @mixin flex_center_bet {
