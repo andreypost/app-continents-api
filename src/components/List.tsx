@@ -9,15 +9,14 @@ interface Props {
 
 const List: React.FC<Props> = ({ children, data, clase }: Props) => {
   const { closeTreeList, setCloseTreeList } = useContext(ListContext)
-  const [listState, setListState] = useState(closeTreeList)
+  const [listState, setListState] = useState('none')
 
   const handleListState = () => {
     if (closeTreeList) {
       setCloseTreeList('')
-      setListState('')
-    } else {
-      setListState(state => state === 'none' ? '' : 'none')
+      return
     }
+    setListState(state => state === 'none' ? '' : 'none')
   }
   return (
     <ul className={clase}>

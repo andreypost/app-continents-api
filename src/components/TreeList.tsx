@@ -13,7 +13,7 @@ interface TLProps {
 }
 
 const TreeList: React.FC<TLProps> = ({ continent }: TLProps) => {
-    const [closeTreeList, setCloseTreeList] = useState('none')
+    const [closeTreeList, setCloseTreeList] = useState('')
     return (
         <ListContext.Provider value={{ closeTreeList, setCloseTreeList }}>
             <List key={continent.name} data={continent.name} clase={'tree'}>
