@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useQuery, gql } from '@apollo/client'
 import Spiner from 'Spiner'
-import List from './List'
+import TreeList from './TreeList'
 
 const Div = styled.div`
   ul {
@@ -91,25 +91,12 @@ const Countries: React.FC = () => {
   return (
     <Div>
       {data && data.continents.length > 0 && data.continents.map((continent: { name: string; countries: any[] }) =>
-        <List key={continent.name} data={continent.name} clase={'tree'}>
-          {continent.countries.map(country =>
-            <List key={country.name} data={country.name} clase={'firstList'}>
-              {country.languages.map((language: { name: string }) =>
-                <List key={language.name} data={language.name} clase={'secondList'} />
-              )}
-            </List>
-          )}
-        </List>
+        <TreeList key={continent.name} continent={continent} />
       )}
     </Div >
   )
 }
 export default Countries
-
-
-
-
-
 
 
 

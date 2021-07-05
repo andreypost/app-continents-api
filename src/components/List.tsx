@@ -1,33 +1,34 @@
 import React, { useState, useContext } from 'react'
-import { ListContext } from '../App'
+import { ListContext } from './TreeList'
 
 interface Props {
-  data: any
-  children?: any
-  clase: any
+  children?: JSX.Element[]
+  data: string
+  clase: string
 }
 
-const List: React.FC<Props> = ({ data, children, clase }: Props) => {
-  const [firstlistState, setfirstListState] = useState('none')
-  const { listState, setListState } = useContext(ListContext)
+const List: React.FC<Props> = ({ children, data, clase }: Props) => {
+  const { closeTreeList, setCloseTreeList } = useContext(ListContext)
+  const [listState, setListState] = useState(closeTreeList)
 
-  const handleCloseTree = (e: { target: any }) => {
-    // for (const ul of e.target.closest('.tree').querySelectorAll('ul:not(.firstList, .secondList)')) {
-    //   ul.style.display = 'none'
-    // }
-    e.target.closest('.tree').querySelector('ul').style.display = 'none'
-    setListState('none')
+  const handleListState = () => {
+    if (closeTreeList) {
+      setCloseTreeList('')
+      setListState('')
+    } else {
+      setListState(state => state === 'none' ? '' : 'none')
+    }
   }
   return (
     <ul className={clase}>
       {children ?
         <li>
-          <span onClick={() => setfirstListState(state => state === 'none' ? 'block' : 'none')}>{data}</span>
-          <ul style={{ display: firstlistState }}>{children}</ul>
+          <span onClick={() => handleListState()}>{data}</span>
+          <ul style={{ display: closeTreeList || listState }}>{children}</ul>
         </li>
         :
         <li>
-          <span onClick={e => handleCloseTree(e)}>{data}</span>
+          <span onClick={() => setCloseTreeList('none')}>{data}</span>
         </li>
       }
     </ul>
