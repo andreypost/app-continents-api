@@ -7,6 +7,20 @@ import TreeList from './TreeList'
 const Div = styled.div`
   ul {
     position: relative;
+    
+    li {
+      margin: 10px auto;
+      
+      span {
+        display: flex;
+        align-items: flex-start;
+        font-weight: 500;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: white;
+        padding: 2px 10px;
+      }
+    }
   }
 
   .tree:before,
@@ -33,20 +47,6 @@ const Div = styled.div`
 
   .secondList:before {
     left: -95px;
-  }
-
-  li {
-    margin: 10px auto;
-  }
-
-  li span {
-    display: flex;
-    align-items: flex-start;
-    font-weight: 500;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: white;
-    padding: 2px 10px;
   }
 
   @media (min-width: 992px) {
