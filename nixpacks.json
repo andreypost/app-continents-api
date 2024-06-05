@@ -1,0 +1,9 @@
+{
+  "phases": {
+    "install": {
+      "cmds": [
+        "npm install --frozen-lockfile"
+      ]
+    }
+  }
+}
